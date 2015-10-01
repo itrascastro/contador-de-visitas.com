@@ -1,0 +1,50 @@
+.form-signin {
+    max-width: 400px;
+    padding: 15px;
+    margin: 0 auto;
+}
+.form-signin img {
+    margin-bottom: 10px;
+}
+.form-control {
+    margin-bottom: 10px;
+}
+.share {
+    float:right;
+    margin-left:20px;
+}
+.form-signin2 {
+    max-width: 900px;
+    padding: 15px;
+    margin: 0 auto;
+}
+#signup-fr2 .control-group-margin {
+    margin-bottom: 20px;
+}
+#links {
+    margin-top: 60px;
+    color: #CCCCCC;
+}
+.previewImage {
+    cursor: pointer;
+    cursor: hand;
+}
+.marginTop {
+    margin-top: 30px;
+}
+#thanx {
+    max-width: 400px;
+}
+#gracias {
+    font-size: 120%;
+}
+.pubTop {
+    margin-bottom: 10px;
+}
+.black {
+    color: #333333;
+}
+#tutorials {
+    margin-top: 20px;
+    color: #CCCCCC;
+}
