@@ -4,7 +4,7 @@ const preview = document.getElementById('home-counter-preview');
 
 if (preview) {
   const svg = renderCounterSvg({
-    style: 'mono',
+    style: 'split',
     theme: 'dark',
     digits: 6,
     count: 128734,

@@ -76,7 +76,7 @@ a:focus {
 
 .brand-logo {
     display: block;
-    width: min(360px, 100%);
+    width: min(460px, 100%);
     height: auto;
 }
 
@@ -115,6 +115,17 @@ a:focus {
 .site-nav a.active {
     background: var(--accent);
     border-color: var(--accent);
+    color: #050505;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+    color: var(--ink);
+    border-color: var(--accent);
+}
+
+.site-nav a.active:hover,
+.site-nav a.active:focus {
     color: #050505;
 }
 
@@ -157,6 +168,10 @@ a:focus {
 .hero-card {
     margin-top: 24px;
     padding: 34px 0 28px;
+}
+
+.hero-card--copy {
+    max-width: 760px;
 }
 
 .hero-grid {
@@ -273,10 +288,24 @@ a:focus {
     color: #050505;
 }
 
+.button-primary:hover,
+.button-primary:focus {
+    color: #050505;
+    background: var(--accent-strong);
+    border-color: var(--accent-strong);
+}
+
 .button-secondary {
     background: transparent;
     color: var(--ink);
     border-color: var(--ink);
+}
+
+.button-secondary:hover,
+.button-secondary:focus {
+    color: var(--ink);
+    border-color: var(--accent);
+    background: rgba(255, 159, 47, 0.08);
 }
 
 .mini-link {
@@ -308,6 +337,10 @@ a:focus {
     padding: 20px;
 }
 
+.home-preview-card {
+    padding: 24px;
+}
+
 .preview-frame {
     padding: 18px;
     border-radius: 24px;
@@ -330,6 +363,10 @@ a:focus {
     display: grid;
     grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
     gap: 24px;
+    align-items: start;
+}
+
+.home-split-grid {
     align-items: start;
 }
 
@@ -542,7 +579,7 @@ a:focus {
     min-height: 170px;
     border: 0;
     overflow: hidden;
-    background: #ffffff;
+    background: #101012;
     border-radius: 18px;
 }
 
@@ -555,14 +592,19 @@ a:focus {
 }
 
 .site-footer {
-    padding: 38px 0 44px;
+    margin-top: 52px;
+    padding: 24px 0 34px;
+    border-top: 1px solid var(--line);
 }
 
 .site-footer small {
-    display: grid;
-    gap: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px 24px;
+    flex-wrap: wrap;
     color: var(--ink-muted);
-    line-height: 1.7;
+    line-height: 1.5;
 }
 
 .muted-inline {
@@ -625,7 +667,7 @@ a:focus {
     }
 
     .brand-logo {
-        width: min(280px, calc(100vw - 110px));
+        width: min(360px, calc(100vw - 104px));
     }
 
     .hero-card {
@@ -634,11 +676,6 @@ a:focus {
 
     .hero-title {
         font-size: clamp(36px, 11vw, 58px);
-    }
-
-    .button-primary,
-    .button-secondary {
-        width: 100%;
     }
 
     .field-grid {
@@ -651,5 +688,9 @@ a:focus {
     .preview-card {
         padding: 20px;
         border-radius: 24px;
+    }
+
+    .site-footer small {
+        align-items: flex-start;
     }
 }
