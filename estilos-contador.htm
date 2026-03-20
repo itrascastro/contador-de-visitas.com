@@ -7,289 +7,141 @@
     <meta name="description" content="Crea tu contador de visitas gratis, elige un estilo y copia el codigo listo para pegar en tu web o blog.">
     <meta name="author" content="contador-de-visitas.com">
     <link rel="shortcut icon" href="images/favicon.ico">
-
     <title>Crea tu contador de visitas</title>
-
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link href="css/sticky-footer-navbar.css" rel="stylesheet">
-    <link href="css/counter.css" rel="stylesheet">
-
-    <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-56286429-1', 'auto');
-      ga('send', 'pageview');
-    </script>
-
-    <style>
-        .hero-lead {
-            max-width: 820px;
-            margin-bottom: 0;
-            color: #5d6d7e;
-            font-size: 18px;
-            line-height: 1.7;
-        }
-
-        .generator-panel {
-            border-radius: 22px;
-            border: 1px solid #dfe7f0;
-            box-shadow: 0 18px 46px rgba(16, 32, 51, 0.08);
-            overflow: hidden;
-            background: #ffffff;
-        }
-
-        .generator-panel .panel-heading {
-            border-bottom: 1px solid #e4ebf3;
-            background: #f7faff;
-            font-weight: 700;
-        }
-
-        .preview-stage {
-            padding: 24px;
-            border: 1px dashed #d7e1eb;
-            border-radius: 18px;
-            background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-            text-align: center;
-        }
-
-        .preview-stage img {
-            display: block;
-            max-width: 100%;
-            margin: 0 auto;
-        }
-
-        .snippet-box {
-            width: 100%;
-            min-height: 120px;
-            font-family: Menlo, Monaco, Consolas, monospace;
-            font-size: 13px;
-            line-height: 1.5;
-            resize: vertical;
-        }
-
-        .style-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
-        }
-
-        .style-card {
-            width: 100%;
-            text-align: left;
-            border: 1px solid #dce5ef;
-            border-radius: 18px;
-            background: #ffffff;
-            padding: 16px;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-        }
-
-        .style-card:hover,
-        .style-card:focus {
-            border-color: #7eaefc;
-            box-shadow: 0 14px 34px rgba(16, 32, 51, 0.10);
-            transform: translateY(-2px);
-            outline: none;
-        }
-
-        .style-card.active {
-            border-color: #0b63f6;
-            box-shadow: 0 16px 38px rgba(11, 99, 246, 0.16);
-        }
-
-        .style-card__preview {
-            display: block;
-            width: 100%;
-            margin-bottom: 12px;
-        }
-
-        .style-card__name {
-            display: block;
-            color: #102033;
-            font-weight: 700;
-            font-size: 16px;
-        }
-
-        .style-card__description {
-            display: block;
-            margin-top: 6px;
-            color: #5e7183;
-            font-size: 13px;
-            line-height: 1.5;
-        }
-
-        .section-title {
-            margin-top: 50px;
-            margin-bottom: 18px;
-        }
-
-        .muted-note {
-            color: #6b7a89;
-        }
-
-        .preview-url {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 8px 12px;
-            border-radius: 12px;
-            background: #f5f8fc;
-            color: #486174;
-            font-family: Menlo, Monaco, Consolas, monospace;
-            font-size: 12px;
-            word-break: break-all;
-        }
-
-        .stack-list li {
-            margin-bottom: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/revive-site.css">
 </head>
-
-<body>
-
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="/"><img src="images/small-logo.gif" class="img-responsive visible-xs" alt="Contador de visitas"><img src="images/logo.gif" class="img-responsive hidden-xs" alt="Contador de visitas"></a>
+<body class="revive-body">
+<div class="site-shell">
+    <header class="site-topbar">
+        <div class="topbar-inner">
+            <a class="brand-link" href="/" title="contador-de-visitas.com">
+                <span class="brand-mark"><img src="/images/small-logo.gif" alt="Contador de visitas"></span>
+                <span class="brand-lockup">
+                    <img class="brand-logo" src="/images/contador-de-visitas-logo.png" alt="contador-de-visitas.com">
+                    <span class="brand-meta">Contador gratis para webs y blogs</span>
+                </span>
+            </a>
+            <nav class="site-nav" aria-label="Navegacion principal">
+                <a href="/">Inicio</a>
+                <a class="active" href="/estilos-contador.htm">Crear contador</a>
+                <a href="/widget-baratos.htm">Widget</a>
+                <a href="http://blog.contador-de-visitas.com">Blog</a>
+            </nav>
         </div>
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="/">Inicio</a></li>
-                <li class="active"><a href="/estilos-contador.htm">Crear contador</a></li>
-                <li><a href="http://blog.contador-de-visitas.com">Blog</a></li>
-                <li><a href="/widget-baratos.htm">Widget</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
+    </header>
 
-<div class="container">
-    <div class="row clearfix">
-        <div class="col-md-12 column">
-            <h1>Crea tu contador de visitas</h1>
-            <p class="hero-lead">Elige un estilo, define el nombre de tu contador y copia el codigo listo para pegar en tu web o blog.</p>
-        </div>
-    </div>
-
-    <div class="row clearfix marginTop">
-        <div class="col-md-5 column">
-            <div class="panel generator-panel">
-                <div class="panel-heading">Configura tu contador</div>
-                <div class="panel-body">
-                    <form id="counter-generator-form" role="form">
-                        <div class="form-group">
-                            <label for="counter-slug">ID del contador</label>
-                            <input id="counter-slug" class="form-control input-lg" type="text" value="mi-web" placeholder="mi-web">
-                            <p class="help-block">Usa un nombre corto para identificar tu contador.</p>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="counter-label">Etiqueta</label>
-                            <input id="counter-label" class="form-control" type="text" value="visitas" placeholder="visitas">
-                        </div>
-
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="form-group">
-                                    <label for="counter-digits">Digitos</label>
-                                    <select id="counter-digits" class="form-control">
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6" selected>6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                        <option value="9">9</option>
-                                        <option value="10">10</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="form-group">
-                                    <label for="counter-start">Valor inicial</label>
-                                    <input id="counter-start" class="form-control" type="number" min="0" value="0">
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="form-group">
-                                    <label for="counter-theme">Tema</label>
-                                    <select id="counter-theme" class="form-control">
-                                        <option value="light" selected>Light</option>
-                                        <option value="dark">Dark</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+    <main>
+        <section class="page-head">
+            <p class="eyebrow">Generador</p>
+            <h1 class="page-title">Crea tu contador de visitas</h1>
+            <p class="page-copy">Elige el estilo, ajusta el texto y copia el codigo listo para pegar en tu web o blog.</p>
+            <div class="badge-row">
+                <span class="badge">Gratis</span>
+                <span class="badge">Responsive</span>
+                <span class="badge">Listo para copiar</span>
             </div>
-        </div>
+        </section>
 
-        <div class="col-md-7 column">
-            <div class="panel generator-panel">
-                <div class="panel-heading">Vista previa</div>
-                <div class="panel-body">
+        <section class="generator-layout">
+            <div class="page-panel">
+                <h2 class="panel-heading-modern">Configura tu contador</h2>
+                <form id="counter-generator-form" class="form-stack" role="form">
+                    <div>
+                        <label class="input-label" for="counter-slug">ID del contador</label>
+                        <input id="counter-slug" class="input-control" type="text" value="mi-web" placeholder="mi-web">
+                        <p class="field-note">Usa un nombre corto para identificar tu contador.</p>
+                    </div>
+
+                    <div>
+                        <label class="input-label" for="counter-label">Etiqueta</label>
+                        <input id="counter-label" class="input-control" type="text" value="visitas" placeholder="visitas">
+                    </div>
+
+                    <div class="field-grid">
+                        <div>
+                            <label class="input-label" for="counter-digits">Digitos</label>
+                            <select id="counter-digits" class="input-control">
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6" selected>6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="input-label" for="counter-start">Valor inicial</label>
+                            <input id="counter-start" class="input-control" type="number" min="0" value="0">
+                        </div>
+                        <div>
+                            <label class="input-label" for="counter-theme">Tema</label>
+                            <select id="counter-theme" class="input-control">
+                                <option value="light" selected>Light</option>
+                                <option value="dark">Dark</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="section-stack">
+                <section class="page-panel">
+                    <h2 class="panel-heading-modern">Vista previa</h2>
                     <div class="preview-stage">
                         <img id="counter-preview-image" alt="Vista previa del contador">
                     </div>
-                    <p class="help-block" id="selected-style-label"></p>
-                </div>
-            </div>
+                    <p id="selected-style-label" class="selected-style-copy"></p>
+                </section>
 
-            <div class="panel generator-panel" style="margin-top: 18px;">
-                <div class="panel-heading">Codigo HTML listo para copiar</div>
-                <div class="panel-body">
-                    <textarea id="counter-snippet" class="form-control snippet-box" readonly></textarea>
-                    <p style="margin-top: 15px;">
-                        <button id="copy-counter-snippet" class="btn btn-primary" type="button">Copiar codigo</button>
-                    </p>
-                    <p class="help-block">Copia el codigo y pegalo donde quieras mostrar el contador.</p>
-                </div>
+                <section class="page-panel">
+                    <h2 class="panel-heading-modern">Codigo HTML listo para copiar</h2>
+                    <textarea id="counter-snippet" class="snippet-box" readonly></textarea>
+                    <div class="action-row">
+                        <button id="copy-counter-snippet" class="button-primary" type="button">Copiar codigo</button>
+                    </div>
+                    <p class="field-note">Copia el codigo y pegalo donde quieras mostrar el contador.</p>
+                </section>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <div class="row clearfix">
-        <div class="col-md-12 column">
+        <section class="page-section">
             <h2 class="section-title">Elige un estilo</h2>
             <div id="style-gallery" class="style-grid"></div>
-        </div>
-    </div>
+        </section>
 
-    <div class="row clearfix">
-        <div class="col-md-12 column">
-            <h2 class="section-title">Solo tienes que hacer esto</h2>
-            <ol class="stack-list">
-                <li>Elige el estilo que mas te guste.</li>
-                <li>Ajusta el texto, los digitos y el valor inicial.</li>
-                <li>Copia el codigo y pegalo en tu web o blog.</li>
-            </ol>
-        </div>
-    </div>
+        <section class="page-section split-grid">
+            <div class="utility-card">
+                <h2>Solo tienes que hacer esto</h2>
+                <ol class="simple-steps">
+                    <li>Elige el estilo que mas te guste.</li>
+                    <li>Ajusta el texto, los digitos y el valor inicial.</li>
+                    <li>Copia el codigo y pegalo en tu web o blog.</li>
+                </ol>
+            </div>
+            <div class="utility-card">
+                <h2>Listo para usar</h2>
+                <p class="section-copy">Prueba distintos estilos, deja el que mejor encaje con tu diseño y publícalo cuando estés conforme con el resultado.</p>
+                <div class="action-row">
+                    <a class="button-secondary" href="/">Volver a inicio</a>
+                    <a class="button-secondary" href="/widget-baratos.htm">Ver widget</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <small>
+            <span class="footer-links">
+                <a href="/">Inicio</a>
+                <a href="/widget-baratos.htm">Widget</a>
+                <a href="http://blog.contador-de-visitas.com">Blog</a>
+            </span>
+            <span class="muted-inline">Powered By <a href="/">contador-de-visitas.com</a></span>
+        </small>
+    </footer>
 </div>
 
-<div id="footer">
-    <div class="container">
-        <p class="text-muted text-right">Powered By <a href="/">contador-de-visitas.com</a></p>
-    </div>
-</div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 <script type="module" src="/js/revive-counter-generator.js"></script>
-
 </body>
 </html>

@@ -4,138 +4,78 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Añade un buscador de ofertas de baratos.net a tu web o blog con un sencillo iframe. Vista previa y código listo para copiar.">
+    <meta name="description" content="Añade un buscador de ofertas de baratos.net a tu web o blog con un codigo listo para copiar.">
     <meta name="author" content="contador-de-visitas.com">
     <link rel="shortcut icon" href="images/favicon.ico">
-
     <title>Widget de baratos.net para tu web o blog</title>
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-
-    <!-- Custom styles for this template -->
-    <link href="css/sticky-footer-navbar.css" rel="stylesheet">
-    <link href="css/counter.css" rel="stylesheet">
-
-    <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-56286429-1', 'auto');
-      ga('send', 'pageview');
-    </script>
-
-    <style>
-        .widget-preview {
-            border: 0;
-            width: 100%;
-            max-width: 720px;
-            height: 170px;
-            overflow: hidden;
-            margin: 20px auto 0 auto;
-            display: block;
-        }
-
-        .code-box {
-            width: 100%;
-            min-height: 170px;
-            font-family: Menlo, Monaco, Consolas, monospace;
-            font-size: 13px;
-            line-height: 1.5;
-            resize: vertical;
-        }
-
-        .widget-note {
-            margin-top: 15px;
-            color: #777777;
-        }
-
-        .code-box-large {
-            min-height: 320px;
-        }
-
-        .config-list li,
-        .steps-list li {
-            margin-bottom: 10px;
-        }
-
-        .section-spacer {
-            margin-top: 35px;
-        }
-
-        .example-title {
-            margin-top: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/revive-site.css">
 </head>
-
-<body>
-
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="/"><img src="images/small-logo.gif" class="img-responsive visible-xs" alt="Contador de visitas"><img src="images/logo.gif" class="img-responsive hidden-xs" alt="Contador de visitas"></a>
+<body class="revive-body">
+<div class="site-shell">
+    <header class="site-topbar">
+        <div class="topbar-inner">
+            <a class="brand-link" href="/" title="contador-de-visitas.com">
+                <span class="brand-mark"><img src="/images/small-logo.gif" alt="Contador de visitas"></span>
+                <span class="brand-lockup">
+                    <img class="brand-logo" src="/images/contador-de-visitas-logo.png" alt="contador-de-visitas.com">
+                    <span class="brand-meta">Contador gratis para webs y blogs</span>
+                </span>
+            </a>
+            <nav class="site-nav" aria-label="Navegacion principal">
+                <a href="/">Inicio</a>
+                <a href="/estilos-contador.htm">Crear contador</a>
+                <a class="active" href="/widget-baratos.htm">Widget</a>
+                <a href="http://blog.contador-de-visitas.com">Blog</a>
+            </nav>
         </div>
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="/">Inicio</a></li>
-                <li><a href="/estilos-contador.htm">Ver todos</a></li>
-                <li><a href="http://blog.contador-de-visitas.com">Blog</a></li>
-                <li class="active"><a href="/widget-baratos.htm">Widget</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
+    </header>
 
-<div class="container">
-    <div class="row clearfix">
-        <div class="col-md-12 column">
-            <h1>Añade un buscador de ofertas a tu web o blog</h1>
-            <p class="lead">Hemos preparado un widget de <a href="https://baratos.net">baratos.net</a> para que puedas insertar un buscador de chollos, ofertas y códigos descuento en tu propia web usando un simple iframe.</p>
-        </div>
-    </div>
+    <main>
+        <section class="page-head">
+            <p class="eyebrow">Widget</p>
+            <h1 class="page-title">Añade un buscador de ofertas a tu web o blog</h1>
+            <p class="page-copy">Copia el codigo, pégalo en tu web y muestra un buscador de ofertas y descuentos de <a href="https://baratos.net">baratos.net</a>.</p>
+        </section>
 
-    <div class="row clearfix marginTop">
-        <div class="col-md-8 column">
-            <h2>Vista previa</h2>
-            <p>Este es el widget funcionando en directo. Los resultados se abrirán en una nueva pestaña de baratos.net.</p>
-            <div class="baratos-widget-wrap">
-                <iframe id="baratos-widget-preview" class="widget-preview" src="https://baratos.net/widget/buscador.html?theme=light&amp;campaign=widget_contador_page" title="Buscador de ofertas de baratos.net" loading="lazy" scrolling="no" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <section class="page-section split-grid">
+            <div class="widget-card">
+                <h2>Vista previa</h2>
+                <p class="section-copy">Así se verá el buscador dentro de tu web.</p>
+                <div class="widget-preview-shell" style="margin-top: 18px;">
+                    <iframe id="baratos-widget-preview" class="widget-preview" src="https://baratos.net/widget/buscador.html?theme=light&amp;campaign=widget_contador_page" title="Buscador de ofertas de baratos.net" loading="lazy" scrolling="no" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+                <div class="action-row">
+                    <a class="button-secondary" href="https://baratos.net/widget/buscador.html" target="_blank" rel="noopener">Abrir widget</a>
+                    <a class="button-secondary" href="https://baratos.net" target="_blank" rel="noopener">Ir a baratos.net</a>
+                </div>
             </div>
-            <p class="widget-note">Si quieres ver la web completa, puedes entrar directamente en <a href="https://baratos.net">baratos.net</a>.</p>
-        </div>
 
-        <div class="col-md-4 column">
-            <h2>Instalación rápida</h2>
-            <p>Copia el bloque recomendado y pégalo en la zona HTML donde quieras mostrar el buscador.</p>
-            <ol class="steps-list">
-                <li>Copia el código del widget.</li>
-                <li>Pégalo donde quieras mostrar el buscador.</li>
-                <li>Publica los cambios en tu web.</li>
-            </ol>
-            <p class="widget-note">Si tu editor visual toca el código, pégalo en un bloque HTML o en la plantilla de tu web.</p>
-        </div>
-    </div>
+            <div class="section-stack">
+                <section class="page-panel">
+                    <h2 class="panel-heading-modern">Instalacion rapida</h2>
+                    <ol class="simple-steps">
+                        <li>Copia el codigo del widget.</li>
+                        <li>Pegalo donde quieras mostrar el buscador.</li>
+                        <li>Publica los cambios en tu web.</li>
+                    </ol>
+                </section>
 
-    <div class="row clearfix section-spacer">
-        <div class="col-md-12 column">
-            <h2>Código recomendado</h2>
-            <p>Este es el código recomendado para la mayoría de webs. Si no quieres complicarte, úsalo tal cual.</p>
-            <textarea id="widget-code" class="form-control code-box code-box-large" readonly><div class="baratos-widget-wrap">
+                <section class="page-panel">
+                    <h2 class="panel-heading-modern">Opciones rapidas</h2>
+                    <ul class="config-list">
+                        <li><code>theme=light</code> o <code>theme=dark</code>.</li>
+                        <li><code>title=...</code> para cambiar el titulo.</li>
+                        <li><code>placeholder=...</code> para cambiar el texto del buscador.</li>
+                        <li><code>button=...</code> para cambiar el texto del boton.</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="page-panel">
+                <h2 class="panel-heading-modern">Codigo recomendado</h2>
+                <textarea id="widget-code" class="code-box code-box-large" readonly><div class="baratos-widget-wrap">
   <iframe
     id="baratos-widget"
     src="https://baratos.net/widget/buscador.html?theme=light&amp;campaign=widget_contador"
@@ -165,43 +105,16 @@
   window.addEventListener('message', handleBaratosWidgetResize, false);
 })();
 </script></textarea>
-            <p style="margin-top: 15px;">
-                <button id="copy-widget-code" class="btn btn-primary" type="button">Copiar código</button>
-                <a class="btn btn-default" href="https://baratos.net/widget/buscador.html" target="_blank" rel="noopener">Abrir widget</a>
-                <a class="btn btn-default" href="https://baratos.net" target="_blank" rel="noopener">Ir a baratos.net</a>
-            </p>
-        </div>
-    </div>
+                <div class="action-row">
+                    <button id="copy-widget-code" class="button-primary" type="button">Copiar codigo</button>
+                </div>
+            </div>
+        </section>
 
-    <div class="row clearfix section-spacer">
-        <div class="col-md-7 column">
-            <h2>Opciones rápidas</h2>
-            <p>Si quieres personalizar un poco el buscador, puedes cambiar estas opciones en la URL del widget:</p>
-            <ul class="config-list">
-                <li><code>theme=light</code> o <code>theme=dark</code> para cambiar el estilo visual.</li>
-                <li><code>title=...</code> para cambiar el título.</li>
-                <li><code>placeholder=...</code> para cambiar el texto del buscador.</li>
-                <li><code>button=...</code> para cambiar el texto del botón.</li>
-            </ul>
-            <p class="widget-note">Si no quieres tocar nada, usa el código recomendado y listo.</p>
-        </div>
-
-        <div class="col-md-5 column">
-            <h2>Consejos de uso</h2>
-            <ul class="config-list">
-                <li>Si lo pones en una columna estrecha, déjalo al 100% de ancho.</li>
-                <li>Si tu web tiene fondo oscuro, prueba <code>theme=dark</code>.</li>
-                <li>Si prefieres no tocar nada, usa el código recomendado tal cual.</li>
-                <li>Comprueba cómo queda en móvil y en escritorio antes de publicarlo.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="row clearfix section-spacer">
-        <div class="col-md-12 column">
-            <h2>Ejemplo personalizado</h2>
-            <p>Este ejemplo cambia el título, el placeholder y el texto del botón.</p>
-            <textarea class="form-control code-box" readonly><iframe
+        <section class="page-section split-grid">
+            <div class="utility-card">
+                <h2>Ejemplo personalizado</h2>
+                <textarea class="code-box" readonly><iframe
   id="baratos-widget"
   src="https://baratos.net/widget/buscador.html?theme=light&amp;title=Busca%20chollos%20en%20baratos.net&amp;placeholder=Buscar%20productos...&amp;button=Buscar"
   title="Buscador de ofertas de baratos.net"
@@ -210,19 +123,30 @@
   referrerpolicy="strict-origin-when-cross-origin"
   style="width:100%;height:170px;border:0;overflow:hidden;display:block;"
 ></iframe></textarea>
-        </div>
-    </div>
+            </div>
+            <div class="utility-card">
+                <h2>Consejos de uso</h2>
+                <ul class="config-list">
+                    <li>Dejalo al 100% de ancho para que se adapte mejor.</li>
+                    <li>Si tu web tiene fondo oscuro, prueba <code>theme=dark</code>.</li>
+                    <li>Comprueba como queda en movil y en escritorio antes de publicarlo.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <small>
+            <span class="footer-links">
+                <a href="/">Inicio</a>
+                <a href="/estilos-contador.htm">Crear contador</a>
+                <a href="http://blog.contador-de-visitas.com">Blog</a>
+            </span>
+            <span class="muted-inline">Powered By <a href="/">contador-de-visitas.com</a></span>
+        </small>
+    </footer>
 </div>
 
-<div id="footer">
-    <div class="container">
-        <p class="text-muted text-right">Powered By <a href="/">contador-de-visitas.com</a></p>
-    </div>
-</div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="js/counter.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 <script>
   (function () {
     var button = document.getElementById('copy-widget-code');
@@ -244,7 +168,7 @@
       }
 
       window.setTimeout(function () {
-        button.textContent = 'Copiar código';
+        button.textContent = 'Copiar codigo';
       }, 1800);
     });
   })();
@@ -266,6 +190,5 @@
     }, false);
   })();
 </script>
-
 </body>
 </html>
