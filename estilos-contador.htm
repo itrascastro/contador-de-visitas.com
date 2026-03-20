@@ -1,32 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Diferentes estilos de contador de visitas para elegir el que mas te guste.">
+    <meta name="description" content="Crea tu nuevo contador de visitas gratis con estilos SVG modernos y arquitectura serverless en Cloudflare.">
     <meta name="author" content="contador-de-visitas.com">
     <link rel="shortcut icon" href="images/favicon.ico">
 
-    <title>Elige tu contador de visitas para tu web o blog</title>
+    <title>Crea tu nuevo contador de visitas</title>
 
-    <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-
-    <!-- Custom styles for this template -->
     <link href="css/sticky-footer-navbar.css" rel="stylesheet">
     <link href="css/counter.css" rel="stylesheet">
 
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <!-- Analytics -->
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -36,15 +28,133 @@
 
       ga('create', 'UA-56286429-1', 'auto');
       ga('send', 'pageview');
-
     </script>
 
-    <!-- Analytics -->
+    <style>
+        .hero-lead {
+            max-width: 820px;
+            margin-bottom: 0;
+            color: #5d6d7e;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .generator-panel {
+            border-radius: 22px;
+            border: 1px solid #dfe7f0;
+            box-shadow: 0 18px 46px rgba(16, 32, 51, 0.08);
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        .generator-panel .panel-heading {
+            border-bottom: 1px solid #e4ebf3;
+            background: #f7faff;
+            font-weight: 700;
+        }
+
+        .preview-stage {
+            padding: 24px;
+            border: 1px dashed #d7e1eb;
+            border-radius: 18px;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+            text-align: center;
+        }
+
+        .preview-stage img {
+            display: block;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .snippet-box {
+            width: 100%;
+            min-height: 120px;
+            font-family: Menlo, Monaco, Consolas, monospace;
+            font-size: 13px;
+            line-height: 1.5;
+            resize: vertical;
+        }
+
+        .style-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .style-card {
+            width: 100%;
+            text-align: left;
+            border: 1px solid #dce5ef;
+            border-radius: 18px;
+            background: #ffffff;
+            padding: 16px;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+        }
+
+        .style-card:hover,
+        .style-card:focus {
+            border-color: #7eaefc;
+            box-shadow: 0 14px 34px rgba(16, 32, 51, 0.10);
+            transform: translateY(-2px);
+            outline: none;
+        }
+
+        .style-card.active {
+            border-color: #0b63f6;
+            box-shadow: 0 16px 38px rgba(11, 99, 246, 0.16);
+        }
+
+        .style-card__preview {
+            display: block;
+            width: 100%;
+            margin-bottom: 12px;
+        }
+
+        .style-card__name {
+            display: block;
+            color: #102033;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .style-card__description {
+            display: block;
+            margin-top: 6px;
+            color: #5e7183;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .section-title {
+            margin-top: 50px;
+            margin-bottom: 18px;
+        }
+
+        .muted-note {
+            color: #6b7a89;
+        }
+
+        .preview-url {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 12px;
+            border-radius: 12px;
+            background: #f5f8fc;
+            color: #486174;
+            font-family: Menlo, Monaco, Consolas, monospace;
+            font-size: 12px;
+            word-break: break-all;
+        }
+
+        .stack-list li {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- Fixed navbar -->
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -59,378 +169,140 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li><a href="/">Inicio</a></li>
-                <li class="active"><a href="/estilos-contador.htm">Ver todos</a></li>
+                <li class="active"><a href="/estilos-contador.htm">Crear contador</a></li>
                 <li><a href="http://blog.contador-de-visitas.com">Blog</a></li>
-                <li><a href="/alojamiento-web.htm">Alojamiento web</a></li>
+                <li><a href="/widget-baratos.htm">Widget</a></li>
             </ul>
-        </div><!--/.nav-collapse -->
+        </div>
     </div>
 </div>
 
-<!-- Begin page content -->
 <div class="container">
-
-    <form id="signup-fr2" method="post" action="signup.php" class="form-horizontal form-signin2" role="form">
-
-        <div class="row clearfix">
-
-            <div class="col-md-3 column">
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio0" name="select1" value="0" checked="true">
-                        <img class="previewImage" id="image0" src="/images/digits0/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio1" name="select1" value="1">
-                        <img class="previewImage" id="image1" src="/images/digits1/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio2" name="select1" value="2">
-                        <img class="previewImage" id="image2" src="/images/digits2/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio3" name="select1" value="3">
-                        <img class="previewImage" id="image3" src="/images/digits3/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio4" name="select1" value="4">
-                        <img class="previewImage" id="image4" src="/images/digits4/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio5" name="select1" value="5">
-                        <img class="previewImage" id="image5" src="/images/digits5/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio6" name="select1" value="6">
-                        <img class="previewImage" id="image6" src="/images/digits6/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio7" name="select1" value="7">
-                        <img class="previewImage" id="image7" src="/images/digits7/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio8" name="select1" value="8">
-                        <img class="previewImage" id="image8" src="/images/digits8/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio9" name="select1" value="9">
-                        <img class="previewImage" id="image9" src="/images/digits9/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio10" name="select1" value="10">
-                        <img class="previewImage" id="image10" src="/images/digits10/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio11" name="select1" value="11">
-                        <img class="previewImage" id="image11" src="/images/digits11/preview.png">
-                    </div>
-                </div>
-
-             </div>
-
-            <div class="col-md-3 column">
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio12" name="select1" value="12">
-                        <img class="previewImage" id="image12" src="/images/digits12/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio13" name="select1" value="13">
-                        <img class="previewImage" id="image13" src="/images/digits13/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio14" name="select1" value="14">
-                        <img class="previewImage" id="image14" src="/images/digits14/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio15" name="select1" value="15">
-                        <img class="previewImage" id="image15" src="/images/digits15/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio16" name="select1" value="16">
-                        <img class="previewImage" id="image16" src="/images/digits16/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio17" name="select1" value="17">
-                        <img class="previewImage" id="image17" src="/images/digits17/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio18" name="select1" value="18">
-                        <img class="previewImage" id="image18" src="/images/digits18/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio19" name="select1" value="19">
-                        <img class="previewImage" id="image19" src="/images/digits19/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio20" name="select1" value="20">
-                        <img class="previewImage" id="image20" src="/images/digits20/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio21" name="select1" value="21">
-                        <img class="previewImage" id="image21" src="/images/digits21/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio22" name="select1" value="22">
-                        <img class="previewImage" id="image22" src="/images/digits22/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio23" name="select1" value="23">
-                        <img class="previewImage" id="image23" src="/images/digits23/preview.png">
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col-md-3 column">
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio24" name="select1" value="24">
-                        <img class="previewImage" id="image24" src="/images/digits24/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio25" name="select1" value="25">
-                        <img class="previewImage" id="image25" src="/images/digits25/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio26" name="select1" value="26">
-                        <img class="previewImage" id="image26" src="/images/digits26/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio27" name="select1" value="27">
-                        <img class="previewImage" id="image27" src="/images/digits27/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio28" name="select1" value="28">
-                        <img class="previewImage" id="image28" src="/images/digits28/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio29" name="select1" value="29">
-                        <img class="previewImage" id="image29" src="/images/digits29/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio30" name="select1" value="30">
-                        <img class="previewImage" id="image30" src="/images/digits30/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio31" name="select1" value="31">
-                        <img class="previewImage" id="image31" src="/images/digits31/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio32" name="select1" value="32">
-                        <img class="previewImage" id="image32" src="/images/digits32/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio33" name="select1" value="33">
-                        <img class="previewImage" id="image33" src="/images/digits33/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio34" name="select1" value="34">
-                        <img class="previewImage" id="image34" src="/images/digits34/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio35" name="select1" value="35">
-                        <img class="previewImage" id="image35" src="/images/digits35/preview.png">
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col-md-3 column">
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio36" name="select1" value="36">
-                        <img class="previewImage" id="image36" src="/images/digits36/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio37" name="select1" value="37">
-                        <img class="previewImage" id="image37" src="/images/digits37/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio38" name="select1" value="38">
-                        <img class="previewImage" id="image38" src="/images/digits38/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio39" name="select1" value="39">
-                        <img class="previewImage" id="image39" src="/images/digits39/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio40" name="select1" value="40">
-                        <img class="previewImage" id="image40" src="/images/digits40/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio42" name="select1" value="42">
-                        <img class="previewImage" id="image42" src="/images/digits42/preview.png">
-                    </div>
-                </div>
-
-                <div class="control-group control-group-margin">
-                    <div class="controls form-inline">
-                        <input type="radio" id="radio43" name="select1" value="43">
-                        <img class="previewImage" id="image43" src="/images/digits43/preview.png">
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="row clearfix">
-
-            <input type="number" name="initialvalue" class="form-control input-lg" placeholder="Valor inicial del contador">
-            <input type="url" name="url" class="form-control input-lg" placeholder="http://">
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Obtener código del contador</button>
-
-        </div>
-
-    </form>
-
-    <div id="links" class="row clearfix">
+    <div class="row clearfix">
         <div class="col-md-12 column">
-            <p class="text-center">
-                <a href="http://www.blogger.com/start?hl=es">Blogger</a>
-                | <a href="http://es.wordpress.com">Wordpress</a>
-                | <a href="http://www.tumblr.com">Tumblr</a>
-                | <a href="http://www.facebook.com">Facebook</a>
-            </p>
+            <h1>Crea tu nuevo contador de visitas</h1>
+            <p class="hero-lead">La nueva version de contador-de-visitas.com sirve contadores SVG desde Cloudflare Workers + Durable Objects. Elige estilo, define un identificador para tu web y copia un simple <code>&lt;img&gt;</code>. Sin PHP, sin VPS y sin imagenes bitmap antiguas.</p>
         </div>
     </div>
 
-</div> <!-- /container -->
+    <div class="row clearfix marginTop">
+        <div class="col-md-5 column">
+            <div class="panel generator-panel">
+                <div class="panel-heading">Configura tu contador</div>
+                <div class="panel-body">
+                    <form id="counter-generator-form" role="form">
+                        <div class="form-group">
+                            <label for="counter-slug">ID del contador</label>
+                            <input id="counter-slug" class="form-control input-lg" type="text" value="mi-web" placeholder="mi-web">
+                            <p class="help-block">Usa un identificador corto y estable. Se convertira en la URL del contador.</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="counter-label">Etiqueta</label>
+                            <input id="counter-label" class="form-control" type="text" value="visitas" placeholder="visitas">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="counter-digits">Digitos</label>
+                                    <select id="counter-digits" class="form-control">
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6" selected>6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="counter-start">Valor inicial</label>
+                                    <input id="counter-start" class="form-control" type="number" min="0" value="0">
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="counter-theme">Tema</label>
+                                    <select id="counter-theme" class="form-control">
+                                        <option value="light" selected>Light</option>
+                                        <option value="dark">Dark</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-7 column">
+            <div class="panel generator-panel">
+                <div class="panel-heading">Vista previa en local</div>
+                <div class="panel-body">
+                    <div class="preview-stage">
+                        <img id="counter-preview-image" alt="Vista previa del contador">
+                    </div>
+                    <p class="help-block" id="selected-style-label"></p>
+                    <div class="preview-url" id="counter-preview-url"></div>
+                </div>
+            </div>
+
+            <div class="panel generator-panel" style="margin-top: 18px;">
+                <div class="panel-heading">Codigo HTML listo para copiar</div>
+                <div class="panel-body">
+                    <textarea id="counter-snippet" class="form-control snippet-box" readonly></textarea>
+                    <p style="margin-top: 15px;">
+                        <button id="copy-counter-snippet" class="btn btn-primary" type="button">Copiar codigo</button>
+                    </p>
+                    <p class="help-block">En el contador final, cada carga de la imagen incrementa el valor. La vista previa de esta pagina no suma visitas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <h2 class="section-title">Elige un estilo</h2>
+            <div id="style-gallery" class="style-grid"></div>
+        </div>
+    </div>
+
+    <div class="row clearfix">
+        <div class="col-md-6 column">
+            <h2 class="section-title">Como funciona ahora</h2>
+            <ol class="stack-list">
+                <li>Tu web carga una imagen SVG desde <code>/c/tu-id.svg</code>.</li>
+                <li>Cloudflare Workers recibe la peticion y delega el contador en un Durable Object.</li>
+                <li>El Durable Object incrementa el numero y el Worker devuelve el SVG actualizado.</li>
+                <li>No necesitas servidor propio, PHP ni una base de datos tradicional.</li>
+            </ol>
+        </div>
+
+        <div class="col-md-6 column">
+            <h2 class="section-title">Notas del MVP</h2>
+            <ul class="stack-list">
+                <li>El contador actual mide pageviews, no visitas unicas.</li>
+                <li>El parametro <code>start</code> solo se usa para inicializar el contador la primera vez.</li>
+                <li>El endpoint JSON <code>/api/counters/tu-id</code> permite consultar el valor actual.</li>
+                <li>Si abres esta web con <code>file://</code>, los modulos y previews no se comportan igual que en HTTP.</li>
+            </ul>
+            <p class="muted-note">La capa publica se mantiene estatica y el servicio del contador se sirve desde Cloudflare Workers + Durable Objects.</p>
+        </div>
+    </div>
+</div>
 
 <div id="footer">
-
     <div class="container">
         <p class="text-muted text-right">Powered By <a href="/">contador-de-visitas.com</a></p>
     </div>
-
 </div>
 
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="js/counter.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="module" src="/js/revive-counter-generator.js"></script>
 
 </body>
 </html>
