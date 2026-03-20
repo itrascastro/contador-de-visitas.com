@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Crea tu nuevo contador de visitas gratis con estilos SVG modernos y arquitectura serverless en Cloudflare.">
+    <meta name="description" content="Crea tu contador de visitas gratis, elige un estilo y copia el codigo listo para pegar en tu web o blog.">
     <meta name="author" content="contador-de-visitas.com">
     <link rel="shortcut icon" href="images/favicon.ico">
 
@@ -181,7 +181,7 @@
     <div class="row clearfix">
         <div class="col-md-12 column">
             <h1>Crea tu nuevo contador de visitas</h1>
-            <p class="hero-lead">La nueva version de contador-de-visitas.com sirve contadores SVG desde Cloudflare Workers + Durable Objects. Elige estilo, define un identificador para tu web y copia un simple <code>&lt;img&gt;</code>. Sin PHP, sin VPS y sin imagenes bitmap antiguas.</p>
+            <p class="hero-lead">Elige un estilo, define el nombre de tu contador y copia el codigo listo para pegar en tu web o blog.</p>
         </div>
     </div>
 
@@ -194,7 +194,7 @@
                         <div class="form-group">
                             <label for="counter-slug">ID del contador</label>
                             <input id="counter-slug" class="form-control input-lg" type="text" value="mi-web" placeholder="mi-web">
-                            <p class="help-block">Usa un identificador corto y estable. Se convertira en la URL del contador.</p>
+                            <p class="help-block">Usa un nombre corto para identificar tu contador.</p>
                         </div>
 
                         <div class="form-group">
@@ -240,13 +240,12 @@
 
         <div class="col-md-7 column">
             <div class="panel generator-panel">
-                <div class="panel-heading">Vista previa en local</div>
+                <div class="panel-heading">Vista previa</div>
                 <div class="panel-body">
                     <div class="preview-stage">
                         <img id="counter-preview-image" alt="Vista previa del contador">
                     </div>
                     <p class="help-block" id="selected-style-label"></p>
-                    <div class="preview-url" id="counter-preview-url"></div>
                 </div>
             </div>
 
@@ -257,7 +256,7 @@
                     <p style="margin-top: 15px;">
                         <button id="copy-counter-snippet" class="btn btn-primary" type="button">Copiar codigo</button>
                     </p>
-                    <p class="help-block">En el contador final, cada carga de la imagen incrementa el valor. La vista previa de esta pagina no suma visitas.</p>
+                    <p class="help-block">Copia el codigo y pegalo donde quieras mostrar el contador.</p>
                 </div>
             </div>
         </div>
@@ -271,25 +270,13 @@
     </div>
 
     <div class="row clearfix">
-        <div class="col-md-6 column">
-            <h2 class="section-title">Como funciona ahora</h2>
+        <div class="col-md-12 column">
+            <h2 class="section-title">Solo tienes que hacer esto</h2>
             <ol class="stack-list">
-                <li>Tu web carga una imagen SVG desde <code>/c/tu-id.svg</code>.</li>
-                <li>Cloudflare Workers recibe la peticion y delega el contador en un Durable Object.</li>
-                <li>El Durable Object incrementa el numero y el Worker devuelve el SVG actualizado.</li>
-                <li>No necesitas servidor propio, PHP ni una base de datos tradicional.</li>
+                <li>Elige el estilo que mas te guste.</li>
+                <li>Ajusta el texto, los digitos y el valor inicial.</li>
+                <li>Copia el codigo y pegalo en tu web o blog.</li>
             </ol>
-        </div>
-
-        <div class="col-md-6 column">
-            <h2 class="section-title">Notas del MVP</h2>
-            <ul class="stack-list">
-                <li>El contador actual mide pageviews, no visitas unicas.</li>
-                <li>El parametro <code>start</code> solo se usa para inicializar el contador la primera vez.</li>
-                <li>El endpoint JSON <code>/api/counters/tu-id</code> permite consultar el valor actual.</li>
-                <li>Si abres esta web con <code>file://</code>, los modulos y previews no se comportan igual que en HTTP.</li>
-            </ul>
-            <p class="muted-note">La capa publica se mantiene estatica y el servicio del contador se sirve desde Cloudflare Workers + Durable Objects.</p>
         </div>
     </div>
 </div>
