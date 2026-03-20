@@ -21,6 +21,10 @@
       "zone_name": "contador-de-visitas.com"
     },
     {
+      "pattern": "contador-de-visitas.com/signup.php*",
+      "zone_name": "contador-de-visitas.com"
+    },
+    {
       "pattern": "www.contador-de-visitas.com/c/*",
       "zone_name": "contador-de-visitas.com"
     },
@@ -34,6 +38,10 @@
     },
     {
       "pattern": "www.contador-de-visitas.com/health*",
+      "zone_name": "contador-de-visitas.com"
+    },
+    {
+      "pattern": "www.contador-de-visitas.com/signup.php*",
       "zone_name": "contador-de-visitas.com"
     }
   ],

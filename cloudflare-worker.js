@@ -3,6 +3,11 @@ import { COUNTER_STYLES, normalizeCounterOptions, renderCounterSvg } from './js/
 
 const COUNTER_IMAGE_ROUTE = /^\/c\/([a-z0-9][a-z0-9._-]{0,63})\.svg$/i;
 const COUNTER_JSON_ROUTE = /^\/api\/counters\/([a-z0-9][a-z0-9._-]{0,63})$/i;
+const LEGACY_REDIRECTS = new Map([
+  ['/signup.php', '/estilos-contador.htm'],
+  ['/signup.html', '/estilos-contador.htm'],
+  ['/signup.htm', '/estilos-contador.htm']
+]);
 
 function parseStartValue(url) {
   const value = url.searchParams.get('start') || url.searchParams.get('initial') || '0';
@@ -55,7 +60,12 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    if (request.method !== 'GET') {
+    if (LEGACY_REDIRECTS.has(url.pathname)) {
+      const redirectUrl = new URL(LEGACY_REDIRECTS.get(url.pathname), url.origin);
+      return Response.redirect(redirectUrl.toString(), 301);
+    }
+
+    if (request.method !== 'GET' && request.method !== 'HEAD') {
       return jsonResponse({ error: 'Method not allowed' }, 405);
     }
 
