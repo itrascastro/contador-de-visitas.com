@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Añade un buscador de ofertas de baratos.net a tu web o blog con un sencillo iframe. Vista previa y código listo para copiar.">
+    <meta name="author" content="contador-de-visitas.com">
+    <link rel="shortcut icon" href="images/favicon.ico">
+
+    <title>Widget de baratos.net para tu web o blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/sticky-footer-navbar.css" rel="stylesheet">
+    <link href="css/counter.css" rel="stylesheet">
+
+    <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-56286429-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <style>
+        .widget-preview {
+            border: 0;
+            width: 100%;
+            max-width: 720px;
+            height: 170px;
+            overflow: hidden;
+            margin: 20px auto 0 auto;
+            display: block;
+        }
+
+        .code-box {
+            width: 100%;
+            min-height: 170px;
+            font-family: Menlo, Monaco, Consolas, monospace;
+            font-size: 13px;
+            line-height: 1.5;
+            resize: vertical;
+        }
+
+        .widget-note {
+            margin-top: 15px;
+            color: #777777;
+        }
+
+        .code-box-large {
+            min-height: 320px;
+        }
+
+        .config-list li,
+        .steps-list li {
+            margin-bottom: 10px;
+        }
+
+        .section-spacer {
+            margin-top: 35px;
+        }
+
+        .example-title {
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/"><img src="images/small-logo.gif" class="img-responsive visible-xs" alt="Contador de visitas"><img src="images/logo.gif" class="img-responsive hidden-xs" alt="Contador de visitas"></a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/estilos-contador.htm">Ver todos</a></li>
+                <li><a href="http://blog.contador-de-visitas.com">Blog</a></li>
+                <li class="active"><a href="/widget-baratos.htm">Widget</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <h1>Añade un buscador de ofertas a tu web o blog</h1>
+            <p class="lead">Hemos preparado un widget de <a href="https://baratos.net">baratos.net</a> para que puedas insertar un buscador de chollos, ofertas y códigos descuento en tu propia web usando un simple iframe.</p>
+        </div>
+    </div>
+
+    <div class="row clearfix marginTop">
+        <div class="col-md-8 column">
+            <h2>Vista previa</h2>
+            <p>Este es el widget funcionando en directo. Los resultados se abrirán en una nueva pestaña de baratos.net.</p>
+            <div class="baratos-widget-wrap">
+                <iframe id="baratos-widget-preview" class="widget-preview" src="https://baratos.net/widget/buscador.html?theme=light&amp;campaign=widget_contador_page" title="Buscador de ofertas de baratos.net" loading="lazy" scrolling="no" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+            <p class="widget-note">Si quieres ver la web completa, puedes entrar directamente en <a href="https://baratos.net">baratos.net</a>.</p>
+        </div>
+
+        <div class="col-md-4 column">
+            <h2>Instalación rápida</h2>
+            <p>Copia el bloque recomendado y pégalo en la zona HTML donde quieras mostrar el buscador. El ejemplo ya incluye el autoajuste de altura para que el iframe no se corte.</p>
+            <ol class="steps-list">
+                <li>Copia el código del widget.</li>
+                <li>Pégalo donde quieras mostrar el buscador.</li>
+                <li>Publica los cambios en tu web.</li>
+            </ol>
+            <p class="widget-note">Si tu editor visual elimina scripts, tendrás que insertarlo en un bloque HTML o plantilla que permita JavaScript.</p>
+        </div>
+    </div>
+
+    <div class="row clearfix section-spacer">
+        <div class="col-md-12 column">
+            <h2>Código recomendado</h2>
+            <p>Este es el código recomendado para la mayoría de webs. Usa tema claro, mantiene el buscador responsive y escucha el evento de resize enviado por el widget.</p>
+            <textarea id="widget-code" class="form-control code-box code-box-large" readonly><div class="baratos-widget-wrap">
+  <iframe
+    id="baratos-widget"
+    src="https://baratos.net/widget/buscador.html?theme=light&amp;campaign=widget_contador"
+    title="Buscador de ofertas de baratos.net"
+    loading="lazy"
+    scrolling="no"
+    referrerpolicy="strict-origin-when-cross-origin"
+    style="width:100%;height:170px;border:0;overflow:hidden;display:block;"
+  ></iframe>
+</div>
+<script>
+(function () {
+  var iframe = document.getElementById('baratos-widget');
+  if (!iframe) return;
+
+  function handleBaratosWidgetResize(event) {
+    if (event.origin !== 'https://baratos.net') return;
+    if (!event.data || event.data.type !== 'baratos-widget:resize') return;
+    if (event.source !== iframe.contentWindow) return;
+
+    var height = Number(event.data.height);
+    if (!Number.isFinite(height)) return;
+
+    iframe.style.height = Math.max(120, Math.ceil(height)) + 'px';
+  }
+
+  window.addEventListener('message', handleBaratosWidgetResize, false);
+})();
+</script></textarea>
+            <p style="margin-top: 15px;">
+                <button id="copy-widget-code" class="btn btn-primary" type="button">Copiar código</button>
+                <a class="btn btn-default" href="https://baratos.net/widget/buscador.html" target="_blank" rel="noopener">Abrir widget</a>
+                <a class="btn btn-default" href="https://baratos.net" target="_blank" rel="noopener">Ir a baratos.net</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="row clearfix section-spacer">
+        <div class="col-md-7 column">
+            <h2>Parámetros de configuración</h2>
+            <p>Puedes personalizar el widget modificando la URL del atributo <code>src</code> del iframe. Los parámetros soportados actualmente son estos:</p>
+            <ul class="config-list">
+                <li><code>theme=light</code> o <code>theme=dark</code>: cambia el estilo visual del widget.</li>
+                <li><code>title=...</code>: sustituye el título principal mostrado dentro del widget.</li>
+                <li><code>placeholder=...</code>: cambia el texto del campo de búsqueda.</li>
+                <li><code>button=...</code>: cambia el texto del botón.</li>
+                <li><code>campaign=...</code>: etiqueta interna para medir desde qué inserción llega el tráfico.</li>
+                <li><code>target=top</code> o <code>target=self</code>: controla dónde se abre el resultado. Si no lo indicas, se abre en una nueva pestaña.</li>
+            </ul>
+            <p class="widget-note">Los antiguos parámetros <code>host</code> y <code>base</code> ya no se usan. Aunque se pasen en la URL, el widget abre siempre los resultados en <a href="https://baratos.net">baratos.net</a>.</p>
+        </div>
+
+        <div class="col-md-5 column">
+            <h2>Consejos de uso</h2>
+            <ul class="config-list">
+                <li>Si lo insertas en una sidebar estrecha, mantén el ancho al 100% y deja que el widget se adapte solo.</li>
+                <li>Si tu web tiene fondo oscuro, prueba <code>theme=dark</code>.</li>
+                <li>Si quieres que la búsqueda reemplace tu página actual, usa <code>target=top</code>.</li>
+                <li>Si prefieres no tocar nada, usa el código recomendado tal cual.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row clearfix section-spacer">
+        <div class="col-md-12 column">
+            <h2>Ejemplo personalizado</h2>
+            <p>Este ejemplo cambia el título, el placeholder y el texto del botón. También etiqueta la campaña para poder diferenciar esa inserción concreta.</p>
+            <textarea class="form-control code-box" readonly><iframe
+  id="baratos-widget"
+  src="https://baratos.net/widget/buscador.html?theme=light&amp;title=Busca%20chollos%20en%20baratos.net&amp;placeholder=Buscar%20productos...&amp;button=Buscar&amp;campaign=widget_sidebar"
+  title="Buscador de ofertas de baratos.net"
+  loading="lazy"
+  scrolling="no"
+  referrerpolicy="strict-origin-when-cross-origin"
+  style="width:100%;height:170px;border:0;overflow:hidden;display:block;"
+></iframe></textarea>
+        </div>
+    </div>
+
+    <div class="row clearfix section-spacer">
+        <div class="col-md-12 column">
+            <h2>Notas importantes</h2>
+            <ul class="config-list">
+                <li>Para que el iframe funcione correctamente, tu página debe servirse por <code>http://</code> o <code>https://</code>. Abrir el HTML localmente con <code>file://</code> no es una prueba fiable.</li>
+                <li>El widget envía un evento <code>baratos-widget:resize</code> al contenedor para ajustar su altura. Por eso el script del ejemplo es importante.</li>
+                <li>Si usas un CMS con bloque HTML personalizado, pega el código completo, no solo el iframe.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="footer">
+    <div class="container">
+        <p class="text-muted text-right">Powered By <a href="/">contador-de-visitas.com</a></p>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/counter.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script>
+  (function () {
+    var button = document.getElementById('copy-widget-code');
+    var textarea = document.getElementById('widget-code');
+
+    if (!button || !textarea) {
+      return;
+    }
+
+    button.addEventListener('click', async function () {
+      try {
+        await navigator.clipboard.writeText(textarea.value);
+        button.textContent = 'Copiado';
+      } catch (error) {
+        textarea.focus();
+        textarea.select();
+        document.execCommand('copy');
+        button.textContent = 'Copiado';
+      }
+
+      window.setTimeout(function () {
+        button.textContent = 'Copiar código';
+      }, 1800);
+    });
+  })();
+</script>
+<script>
+  (function () {
+    var iframe = document.getElementById('baratos-widget-preview');
+    if (!iframe) return;
+
+    window.addEventListener('message', function (event) {
+      if (event.origin !== 'https://baratos.net') return;
+      if (!event.data || event.data.type !== 'baratos-widget:resize') return;
+      if (event.source !== iframe.contentWindow) return;
+
+      var height = Number(event.data.height);
+      if (!Number.isFinite(height)) return;
+
+      iframe.style.height = Math.max(120, Math.ceil(height)) + 'px';
+    }, false);
+  })();
+</script>
+
+</body>
+</html>
