@@ -18,15 +18,22 @@
         <div class="topbar-inner">
             <a class="brand-link" href="/" title="contador-de-visitas.com">
                 <span class="brand-lockup">
-                    <img class="brand-logo" src="/images/logo-wordmark.svg" alt="contador-de-visitas.com">
+                    <img class="brand-logo" src="/images/logo-wordmark-dark.svg" alt="contador-de-visitas.com">
                 </span>
             </a>
-            <nav class="site-nav" aria-label="Navegacion principal">
-                <a class="active" href="/">Inicio</a>
-                <a href="/estilos-contador.htm">Crear contador</a>
-                <a href="/widget-baratos.htm">Widget</a>
-                <a href="http://blog.contador-de-visitas.com">Blog</a>
-            </nav>
+            <div class="site-nav-shell">
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Abrir menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="site-nav" aria-label="Navegacion principal">
+                    <a class="active" href="/">Inicio</a>
+                    <a href="/estilos-contador.htm">Crear contador</a>
+                    <a href="/widget-baratos.htm">Widget</a>
+                    <a href="http://blog.contador-de-visitas.com">Blog</a>
+                </nav>
+            </div>
         </div>
     </header>
 
@@ -82,7 +89,7 @@
                 <h2>Buscador de ofertas y descuentos</h2>
                 <p class="section-copy">Si quieres añadir una utilidad extra a tu web o blog, aqui puedes mostrar un buscador de chollos, productos rebajados y codigos descuento de <a href="https://baratos.net" title="Ofertas y descuentos en baratos.net">baratos.net</a>.</p>
                 <div class="widget-preview-shell" style="margin-top: 18px;">
-                    <iframe id="baratos-widget-home" class="widget-preview" src="https://baratos.net/widget/buscador.html?theme=light&amp;campaign=widget_contador_home" title="Buscador de ofertas de baratos.net" loading="lazy" scrolling="no" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    <iframe id="baratos-widget-home" class="widget-preview" src="https://baratos.net/widget/buscador.html?theme=dark&amp;campaign=widget_contador_home" title="Buscador de ofertas de baratos.net" loading="lazy" scrolling="no" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
                 <div class="footer-links">
                     <a href="https://baratos.net" title="Buscar ofertas en baratos.net">Buscar ofertas en baratos.net</a>
@@ -134,6 +141,7 @@
     });
   })();
 </script>
+<script src="/js/site-nav.js"></script>
 <script type="module" src="/js/revive-counter-home.js"></script>
 </body>
 </html>

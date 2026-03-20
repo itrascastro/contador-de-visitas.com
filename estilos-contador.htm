@@ -16,15 +16,22 @@
         <div class="topbar-inner">
             <a class="brand-link" href="/" title="contador-de-visitas.com">
                 <span class="brand-lockup">
-                    <img class="brand-logo" src="/images/logo-wordmark.svg" alt="contador-de-visitas.com">
+                    <img class="brand-logo" src="/images/logo-wordmark-dark.svg" alt="contador-de-visitas.com">
                 </span>
             </a>
-            <nav class="site-nav" aria-label="Navegacion principal">
-                <a href="/">Inicio</a>
-                <a class="active" href="/estilos-contador.htm">Crear contador</a>
-                <a href="/widget-baratos.htm">Widget</a>
-                <a href="http://blog.contador-de-visitas.com">Blog</a>
-            </nav>
+            <div class="site-nav-shell">
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Abrir menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="site-nav" aria-label="Navegacion principal">
+                    <a href="/">Inicio</a>
+                    <a class="active" href="/estilos-contador.htm">Crear contador</a>
+                    <a href="/widget-baratos.htm">Widget</a>
+                    <a href="http://blog.contador-de-visitas.com">Blog</a>
+                </nav>
+            </div>
         </div>
     </header>
 
@@ -140,6 +147,7 @@
     </footer>
 </div>
 
+<script src="/js/site-nav.js"></script>
 <script type="module" src="/js/revive-counter-generator.js"></script>
 </body>
 </html>

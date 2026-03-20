@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="74" viewBox="0 0 760 74" role="img" aria-label="contador-de-visitas.com">
+  <g transform="translate(2 8)">
+    <rect x="0" y="28" width="12" height="24" rx="6" fill="#ff8c00"/>
+    <rect x="18" y="18" width="12" height="34" rx="6" fill="#ff9f2f"/>
+    <rect x="36" y="8" width="12" height="44" rx="6" fill="#ffb252"/>
+    <rect x="54" y="0" width="12" height="52" rx="6" fill="#ffc57a"/>
+  </g>
+  <text x="84" y="46" fill="#f6f3ed" font-family="Avenir Next Condensed, Arial Narrow, Trebuchet MS, sans-serif" font-size="46" font-weight="800" letter-spacing="0.4">contador-de-visitas.com</text>
+</svg>

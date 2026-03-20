@@ -16,15 +16,22 @@
         <div class="topbar-inner">
             <a class="brand-link" href="/" title="contador-de-visitas.com">
                 <span class="brand-lockup">
-                    <img class="brand-logo" src="/images/logo-wordmark.svg" alt="contador-de-visitas.com">
+                    <img class="brand-logo" src="/images/logo-wordmark-dark.svg" alt="contador-de-visitas.com">
                 </span>
             </a>
-            <nav class="site-nav" aria-label="Navegacion principal">
-                <a href="/">Inicio</a>
-                <a href="/estilos-contador.htm">Crear contador</a>
-                <a class="active" href="/widget-baratos.htm">Widget</a>
-                <a href="http://blog.contador-de-visitas.com">Blog</a>
-            </nav>
+            <div class="site-nav-shell">
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Abrir menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="site-nav" aria-label="Navegacion principal">
+                    <a href="/">Inicio</a>
+                    <a href="/estilos-contador.htm">Crear contador</a>
+                    <a class="active" href="/widget-baratos.htm">Widget</a>
+                    <a href="http://blog.contador-de-visitas.com">Blog</a>
+                </nav>
+            </div>
         </div>
     </header>
 
@@ -40,7 +47,7 @@
                 <h2>Vista previa</h2>
                 <p class="section-copy">Así se verá el buscador dentro de tu web.</p>
                 <div class="widget-preview-shell" style="margin-top: 18px;">
-                    <iframe id="baratos-widget-preview" class="widget-preview" src="https://baratos.net/widget/buscador.html?theme=light&amp;campaign=widget_contador_page" title="Buscador de ofertas de baratos.net" loading="lazy" scrolling="no" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    <iframe id="baratos-widget-preview" class="widget-preview" src="https://baratos.net/widget/buscador.html?theme=dark&amp;campaign=widget_contador_page" title="Buscador de ofertas de baratos.net" loading="lazy" scrolling="no" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
                 <div class="action-row">
                     <a class="button-secondary" href="https://baratos.net/widget/buscador.html" target="_blank" rel="noopener">Abrir widget</a>
@@ -61,7 +68,7 @@
                 <section class="page-panel">
                     <h2 class="panel-heading-modern">Opciones rapidas</h2>
                     <ul class="config-list">
-                        <li><code>theme=light</code> o <code>theme=dark</code>.</li>
+                        <li><code>theme=dark</code> o <code>theme=light</code>.</li>
                         <li><code>title=...</code> para cambiar el titulo.</li>
                         <li><code>placeholder=...</code> para cambiar el texto del buscador.</li>
                         <li><code>button=...</code> para cambiar el texto del boton.</li>
@@ -76,7 +83,7 @@
                 <textarea id="widget-code" class="code-box code-box-large" readonly><div class="baratos-widget-wrap">
   <iframe
     id="baratos-widget"
-    src="https://baratos.net/widget/buscador.html?theme=light&amp;campaign=widget_contador"
+    src="https://baratos.net/widget/buscador.html?theme=dark&amp;campaign=widget_contador"
     title="Buscador de ofertas de baratos.net"
     loading="lazy"
     scrolling="no"
@@ -114,7 +121,7 @@
                 <h2>Ejemplo personalizado</h2>
                 <textarea class="code-box" readonly><iframe
   id="baratos-widget"
-  src="https://baratos.net/widget/buscador.html?theme=light&amp;title=Busca%20chollos%20en%20baratos.net&amp;placeholder=Buscar%20productos...&amp;button=Buscar"
+  src="https://baratos.net/widget/buscador.html?theme=dark&amp;title=Busca%20chollos%20en%20baratos.net&amp;placeholder=Buscar%20productos...&amp;button=Buscar"
   title="Buscador de ofertas de baratos.net"
   loading="lazy"
   scrolling="no"
@@ -171,6 +178,7 @@
     });
   })();
 </script>
+<script src="/js/site-nav.js"></script>
 <script>
   (function () {
     var iframe = document.getElementById('baratos-widget-preview');
