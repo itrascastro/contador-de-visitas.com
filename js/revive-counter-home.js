@@ -7,9 +7,10 @@ if (preview) {
     style: 'split',
     theme: 'dark',
     digits: 6,
-    count: 128734,
-    label: 'visitas'
+    count: 128734
   });
 
   preview.src = svgToDataUri(svg);
+  preview.style.width = '100%';
+  preview.style.height = 'auto';
 }

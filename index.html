@@ -10,7 +10,10 @@
     <meta name="robots" content="index, follow">
     <meta name="author" content="contador-de-visitas.com">
     <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/css/revive-site.css?v=20260321c">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="/css/revive-site.css?v=20260321d">
 </head>
 <body class="revive-body">
 <div class="site-shell">
@@ -18,7 +21,8 @@
         <div class="topbar-inner">
             <a class="brand-link" href="/" title="contador-de-visitas.com">
                 <span class="brand-lockup">
-                    <img class="brand-logo" src="/images/logo-wordmark-dark.svg?v=20260321c" alt="contador-de-visitas.com">
+                    <svg class="brand-icon" viewBox="0 0 80 64" aria-hidden="true"><rect x="0" y="36" width="14" height="28" rx="7" fill="#ff8c00"/><rect x="21" y="24" width="14" height="40" rx="7" fill="#ff9f2f"/><rect x="42" y="12" width="14" height="52" rx="7" fill="#ffb252"/><rect x="63" y="0" width="14" height="64" rx="7" fill="#ffc57a"/></svg>
+                    <span class="brand-name">contador-de-visitas.com</span>
                 </span>
             </a>
             <div class="site-nav-shell">
@@ -41,16 +45,24 @@
             <section class="hero-card hero-card--copy page-section">
                 <p class="eyebrow">Contador de visitas gratis</p>
                 <h1 class="hero-title">Crea tu contador y pégalo en tu web</h1>
-                <p class="hero-text">Elige un estilo, define el nombre de tu contador y copia el codigo listo para pegarlo en cualquier web o blog.</p>
+                <p class="hero-text">Pega la URL de tu web, elige un estilo y copia el codigo listo para pegarlo en cualquier web o blog.</p>
                 <div class="action-row">
                     <a class="button-primary" href="/estilos-contador.htm" title="Generar mi contador">Generar mi contador</a>
-                    <a class="button-secondary" href="/estilos-contador.htm#style-gallery" title="Ver estilos disponibles">Ver estilos</a>
+                    <a class="button-secondary" href="/estilos-contador.htm" title="Ver estilos disponibles">Ver estilos</a>
                 </div>
-                <div class="hero-links">
-                    <a class="mini-link" href="http://www.blogger.com/start?hl=es">Blogger</a>
-                    <a class="mini-link" href="http://es.wordpress.com">Wordpress</a>
-                    <a class="mini-link" href="http://www.tumblr.com">Tumblr</a>
-                    <a class="mini-link" href="http://www.facebook.com">Facebook</a>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Gratis para siempre</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Sin registro</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Copia y pega</span>
+                    </div>
                 </div>
             </section>
 
@@ -63,19 +75,10 @@
 
             <section class="home-bottom-grid">
                 <section class="utility-card">
-                    <h2>Enlaces destacados</h2>
-                    <p class="section-copy">Recursos recomendados para quien monta o mantiene una web.</p>
-                    <ul class="paid-link-list">
-                        <li><a href="https://seguridadsoler.com/cajas-fuertes/">cajas fuertes</a></li>
-                        <li><a href="https://alojarse.net">alojarse.net</a></li>
-                    </ul>
-                </section>
-
-                <section class="utility-card">
                     <h2>Como usarlo</h2>
                     <ol class="simple-steps">
                         <li>Elige el estilo que mas te guste.</li>
-                        <li>Ajusta el texto y el valor inicial.</li>
+                        <li>Pega la URL y ajusta el valor inicial.</li>
                         <li>Copia el codigo y pegalo en tu web.</li>
                     </ol>
                 </section>
@@ -87,11 +90,29 @@
                 <p class="eyebrow">Utilidad extra</p>
                 <h2>Buscador de ofertas y descuentos</h2>
                 <div class="widget-preview-shell" style="margin-top: 18px;">
-                    <iframe id="baratos-widget-home" class="widget-preview" src="https://baratos.net/widget/buscador.html?theme=dark&amp;campaign=widget_contador_home" title="Buscador de ofertas de baratos.net" loading="lazy" scrolling="no" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    <iframe id="baratos-widget-home" class="widget-preview" src="https://baratos.net/widget/buscador.html?theme=dark&amp;accent=f97316&amp;bg=09090b&amp;color=fafafa&amp;campaign=widget_contador_home" title="Buscador de ofertas de baratos.net" loading="lazy" scrolling="no" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
                 <div class="footer-links">
                     <a href="https://baratos.net" title="Buscar ofertas en baratos.net">Buscar ofertas en baratos.net</a>
                     <a href="/widget-baratos.htm" title="Cómo usar el widget de baratos.net">Pon este widget en tu web</a>
+                </div>
+            </section>
+
+            <section class="widget-card page-section">
+                <p class="eyebrow">Enlaces destacados</p>
+                <ul class="paid-link-list">
+                    <li><a href="https://seguridadsoler.com/cajas-fuertes/">cajas fuertes</a></li>
+                    <li><a href="https://alojarse.net">alojarse.net</a></li>
+                </ul>
+            </section>
+
+            <section class="widget-card page-section">
+                <p class="eyebrow">Plataformas compatibles</p>
+                <div class="hero-links">
+                    <a class="mini-link" href="http://www.blogger.com/start?hl=es">Blogger</a>
+                    <a class="mini-link" href="http://es.wordpress.com">Wordpress</a>
+                    <a class="mini-link" href="http://www.tumblr.com">Tumblr</a>
+                    <a class="mini-link" href="http://www.facebook.com">Facebook</a>
                 </div>
             </section>
         </aside>
@@ -105,22 +126,12 @@
                 <a href="http://youtu.be/g6y2nYABOKg">Video Wordpress</a>
                 <a href="http://youtu.be/qGcqy4EqnCc">Video Tumblr</a>
             </span>
-            <span class="muted-inline">contador-de-visitas.com</span>
+            <span class="muted-inline">© <span id="footer-year">2026</span> contador-de-visitas.com</span>
         </small>
     </footer>
 </div>
+<script>var y=document.getElementById('footer-year');if(y)y.textContent=new Date().getFullYear();</script>
 
-<script src="/cookiechoices.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    cookieChoices.showCookieConsentBar(
-      'Las cookies nos ayudan a ofrecer nuestros servicios. Al utilizarlos, usted acepta el uso de cookies.',
-      'Entendido',
-      'Mas informacion',
-      'http://www.google.com/intl/es/policies/technologies/cookies/'
-    );
-  });
-</script>
 <script>
   (function () {
     var iframe = document.getElementById('baratos-widget-home');
@@ -138,7 +149,7 @@
     });
   })();
 </script>
-<script src="/js/site-nav.js?v=20260321c"></script>
+<script src="/js/site-nav.js?v=20260321d"></script>
 <script type="module" src="/js/revive-counter-home.js"></script>
 </body>
 </html>

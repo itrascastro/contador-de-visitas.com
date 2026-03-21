@@ -48,3 +48,44 @@
     margin-top: 20px;
     color: #CCCCCC;
 }
+
+.legacy-brand-link {
+    display: inline-flex !important;
+    align-items: center;
+    height: 50px;
+    padding: 11px 0;
+    text-decoration: none;
+}
+
+.legacy-brand-lockup {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.legacy-brand-icon {
+    display: block;
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+}
+
+.legacy-brand-name {
+    color: #222222;
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -0.025em;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+    .legacy-brand-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .legacy-brand-name {
+        font-size: 22px;
+    }
+}

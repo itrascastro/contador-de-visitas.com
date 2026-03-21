@@ -73,8 +73,10 @@ export default {
         style: url.searchParams.get('style'),
         theme: url.searchParams.get('theme'),
         digits: url.searchParams.get('digits'),
-        label: url.searchParams.get('label'),
-        count: url.searchParams.get('value')
+        count: url.searchParams.get('value'),
+        bg: url.searchParams.get('bg'),
+        color: url.searchParams.get('color'),
+        radius: url.searchParams.get('radius')
       });
 
       return svgResponse(renderCounterSvg(options), 'public, max-age=3600');
@@ -94,8 +96,7 @@ export default {
         slug,
         style: url.searchParams.get('style'),
         theme: url.searchParams.get('theme'),
-        digits: url.searchParams.get('digits'),
-        label: url.searchParams.get('label')
+        digits: url.searchParams.get('digits')
       });
       const data = await getCounterCount(env, slug, startValue, true);
 
@@ -104,8 +105,10 @@ export default {
           style: options.style,
           theme: options.theme,
           digits: options.digits,
-          label: options.label,
-          count: data.count
+          count: data.count,
+          bg: url.searchParams.get('bg'),
+          color: url.searchParams.get('color'),
+          radius: url.searchParams.get('radius')
         }),
         'no-store, no-cache, must-revalidate'
       );

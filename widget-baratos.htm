@@ -8,7 +8,10 @@
     <meta name="author" content="contador-de-visitas.com">
     <link rel="shortcut icon" href="images/favicon.ico">
     <title>Widget de baratos.net para tu web o blog</title>
-    <link rel="stylesheet" href="/css/revive-site.css?v=20260321c">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="/css/revive-site.css?v=20260321d">
 </head>
 <body class="revive-body">
 <div class="site-shell">
@@ -16,7 +19,8 @@
         <div class="topbar-inner">
             <a class="brand-link" href="/" title="contador-de-visitas.com">
                 <span class="brand-lockup">
-                    <img class="brand-logo" src="/images/logo-wordmark-dark.svg?v=20260321c" alt="contador-de-visitas.com">
+                    <svg class="brand-icon" viewBox="0 0 80 64" aria-hidden="true"><rect x="0" y="36" width="14" height="28" rx="7" fill="#ff8c00"/><rect x="21" y="24" width="14" height="40" rx="7" fill="#ff9f2f"/><rect x="42" y="12" width="14" height="52" rx="7" fill="#ffb252"/><rect x="63" y="0" width="14" height="64" rx="7" fill="#ffc57a"/></svg>
+                    <span class="brand-name">contador-de-visitas.com</span>
                 </span>
             </a>
             <div class="site-nav-shell">
@@ -46,7 +50,7 @@
                 <h2>Vista previa</h2>
                 <p class="section-copy">Así se verá el buscador dentro de tu web.</p>
                 <div class="widget-preview-shell" style="margin-top: 18px;">
-                    <iframe id="baratos-widget-preview" class="widget-preview" src="https://baratos.net/widget/buscador.html?theme=dark&amp;campaign=widget_contador_page" title="Buscador de ofertas de baratos.net" loading="lazy" scrolling="no" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    <iframe id="baratos-widget-preview" class="widget-preview" src="https://baratos.net/widget/buscador.html?theme=dark&amp;accent=f97316&amp;bg=09090b&amp;color=fafafa&amp;campaign=widget_contador_page" title="Buscador de ofertas de baratos.net" loading="lazy" scrolling="no" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
                 <div class="action-row">
                     <a class="button-secondary" href="https://baratos.net/widget/buscador.html" target="_blank" rel="noopener">Abrir widget</a>
@@ -145,9 +149,10 @@
                 <a href="/">Inicio</a>
                 <a href="/estilos-contador.htm">Crear contador</a>
             </span>
-            <span class="muted-inline">contador-de-visitas.com</span>
+            <span class="muted-inline">© <span id="footer-year">2026</span> contador-de-visitas.com</span>
         </small>
     </footer>
+    <script>var y=document.getElementById('footer-year');if(y)y.textContent=new Date().getFullYear();</script>
 </div>
 
 <script>
@@ -176,7 +181,7 @@
     });
   })();
 </script>
-<script src="/js/site-nav.js?v=20260321c"></script>
+<script src="/js/site-nav.js?v=20260321d"></script>
 <script>
   (function () {
     var iframe = document.getElementById('baratos-widget-preview');

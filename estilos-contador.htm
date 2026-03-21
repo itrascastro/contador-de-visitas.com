@@ -8,7 +8,10 @@
     <meta name="author" content="contador-de-visitas.com">
     <link rel="shortcut icon" href="images/favicon.ico">
     <title>Crea tu contador de visitas</title>
-    <link rel="stylesheet" href="/css/revive-site.css?v=20260321c">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="/css/revive-site.css?v=20260321d">
 </head>
 <body class="revive-body">
 <div class="site-shell">
@@ -16,7 +19,8 @@
         <div class="topbar-inner">
             <a class="brand-link" href="/" title="contador-de-visitas.com">
                 <span class="brand-lockup">
-                    <img class="brand-logo" src="/images/logo-wordmark-dark.svg?v=20260321c" alt="contador-de-visitas.com">
+                    <svg class="brand-icon" viewBox="0 0 80 64" aria-hidden="true"><rect x="0" y="36" width="14" height="28" rx="7" fill="#ff8c00"/><rect x="21" y="24" width="14" height="40" rx="7" fill="#ff9f2f"/><rect x="42" y="12" width="14" height="52" rx="7" fill="#ffb252"/><rect x="63" y="0" width="14" height="64" rx="7" fill="#ffc57a"/></svg>
+                    <span class="brand-name">contador-de-visitas.com</span>
                 </span>
             </a>
             <div class="site-nav-shell">
@@ -38,7 +42,7 @@
         <section class="page-head">
             <p class="eyebrow">Generador</p>
             <h1 class="page-title">Crea tu contador de visitas</h1>
-            <p class="page-copy">Elige el estilo, ajusta el texto y copia el codigo listo para pegar en tu web o blog.</p>
+            <p class="page-copy">Pega la URL de tu web, elige el estilo y copia el codigo listo para pegar en tu web o blog.</p>
             <div class="badge-row">
                 <span class="badge">Gratis</span>
                 <span class="badge">Responsive</span>
@@ -47,46 +51,126 @@
         </section>
 
         <section class="generator-layout">
-            <div class="page-panel">
-                <h2 class="panel-heading-modern">Configura tu contador</h2>
-                <form id="counter-generator-form" class="form-stack" role="form">
-                    <div>
-                        <label class="input-label" for="counter-slug">ID del contador</label>
-                        <input id="counter-slug" class="input-control" type="text" value="mi-web" placeholder="mi-web">
-                        <p class="field-note">Usa un nombre corto para identificar tu contador.</p>
-                    </div>
+            <div class="section-stack">
+                <div class="page-panel">
+                    <h2 class="panel-heading-modern">Configura tu contador</h2>
+                    <form id="counter-generator-form" class="form-stack" role="form">
+                        <div>
+                            <label class="input-label" for="counter-site-url">URL de tu web</label>
+                            <input id="counter-site-url" class="input-control" type="url" value="" placeholder="https://www.ejemplo.com/" required>
+                            <p class="field-note">Pega la URL de tu web.</p>
+                        </div>
 
-                    <div>
-                        <label class="input-label" for="counter-label">Etiqueta</label>
-                        <input id="counter-label" class="input-control" type="text" value="visitas" placeholder="visitas">
-                    </div>
+                        <div>
+                            <label class="input-label" for="counter-style">Estilo</label>
+                            <select id="counter-style" class="input-control"></select>
+                        </div>
 
-                    <div class="field-grid">
+                        <div class="field-grid">
+                            <div>
+                                <label class="input-label" for="counter-digits">Digitos</label>
+                                <select id="counter-digits" class="input-control">
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6" selected>6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="input-label" for="counter-start">Valor inicial</label>
+                                <input id="counter-start" class="input-control" type="number" min="0" value="0">
+                            </div>
+                            <div>
+                                <label class="input-label" for="counter-theme">Tema</label>
+                                <select id="counter-theme" class="input-control">
+                                    <option value="light" selected>Light</option>
+                                    <option value="dark">Dark</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="page-panel">
+                    <h2 class="panel-heading-modern">Personalizar colores</h2>
+                    <div class="form-stack">
                         <div>
-                            <label class="input-label" for="counter-digits">Digitos</label>
-                            <select id="counter-digits" class="input-control">
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6" selected>6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                            </select>
+                            <label class="input-label">Fondo</label>
+                            <input id="counter-bg" type="color" value="#ffffff" class="swatch-hidden-input">
+                            <div class="swatch-grid" data-target="counter-bg">
+                                <button type="button" class="swatch swatch--default active" data-action="reset" title="Por defecto">
+                                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 8a6 6 0 1 1 1.5 3.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M2 12.5V9h3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </button>
+                                <button type="button" class="swatch" style="background:#ffffff" data-color="#ffffff" title="Blanco"></button>
+                                <button type="button" class="swatch" style="background:#09090b" data-color="#09090b" title="Negro"></button>
+                                <button type="button" class="swatch" style="background:#eb4d4b" data-color="#eb4d4b" title="Rojo"></button>
+                                <button type="button" class="swatch" style="background:#f78fb3" data-color="#f78fb3" title="Rosa"></button>
+                                <button type="button" class="swatch" style="background:#6ab04c" data-color="#6ab04c" title="Verde"></button>
+                                <button type="button" class="swatch" style="background:#2d8659" data-color="#2d8659" title="Verde oscuro"></button>
+                                <button type="button" class="swatch" style="background:#22a6b3" data-color="#22a6b3" title="Teal"></button>
+                                <button type="button" class="swatch" style="background:#4a69bd" data-color="#4a69bd" title="Azul"></button>
+                                <button type="button" class="swatch" style="background:#6c5ce7" data-color="#6c5ce7" title="Indigo"></button>
+                                <button type="button" class="swatch" style="background:#9b59b6" data-color="#9b59b6" title="Purpura"></button>
+                                <button type="button" class="swatch" style="background:#e84393" data-color="#e84393" title="Magenta"></button>
+                                <button type="button" class="swatch" style="background:#f06292" data-color="#f06292" title="Coral"></button>
+                                <button type="button" class="swatch" style="background:#e67e22" data-color="#e67e22" title="Naranja"></button>
+                                <button type="button" class="swatch" style="background:#f7d731" data-color="#f7d731" title="Amarillo"></button>
+                                <button type="button" class="swatch" style="background:#2ecc71" data-color="#2ecc71" title="Esmeralda"></button>
+                                <button type="button" class="swatch" style="background:#55efc4" data-color="#55efc4" title="Turquesa"></button>
+                                <button type="button" class="swatch" style="background:#74b9ff" data-color="#74b9ff" title="Celeste"></button>
+                                <button type="button" class="swatch" style="background:#a29bfe" data-color="#a29bfe" title="Lavanda"></button>
+                                <button type="button" class="swatch" style="background:#fd79a8" data-color="#fd79a8" title="Chicle"></button>
+                                <button type="button" class="swatch" style="background:#fab1a0" data-color="#fab1a0" title="Salmon"></button>
+                                <button type="button" class="swatch" style="background:#ffc0cb" data-color="#ffc0cb" title="Rosa pastel"></button>
+                                <button type="button" class="swatch" style="background:#b8e994" data-color="#b8e994" title="Menta"></button>
+                                <button type="button" class="swatch swatch--custom" data-action="pick" title="Color personalizado">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 4v8M4 8h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                                </button>
+                            </div>
                         </div>
                         <div>
-                            <label class="input-label" for="counter-start">Valor inicial</label>
-                            <input id="counter-start" class="input-control" type="number" min="0" value="0">
+                            <label class="input-label">Texto</label>
+                            <input id="counter-color" type="color" value="#34291f" class="swatch-hidden-input">
+                            <div class="swatch-grid" data-target="counter-color">
+                                <button type="button" class="swatch swatch--default active" data-action="reset" title="Por defecto">
+                                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 8a6 6 0 1 1 1.5 3.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M2 12.5V9h3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </button>
+                                <button type="button" class="swatch" style="background:#ffffff" data-color="#ffffff" title="Blanco"></button>
+                                <button type="button" class="swatch" style="background:#09090b" data-color="#09090b" title="Negro"></button>
+                                <button type="button" class="swatch" style="background:#eb4d4b" data-color="#eb4d4b" title="Rojo"></button>
+                                <button type="button" class="swatch" style="background:#f78fb3" data-color="#f78fb3" title="Rosa"></button>
+                                <button type="button" class="swatch" style="background:#6ab04c" data-color="#6ab04c" title="Verde"></button>
+                                <button type="button" class="swatch" style="background:#2d8659" data-color="#2d8659" title="Verde oscuro"></button>
+                                <button type="button" class="swatch" style="background:#22a6b3" data-color="#22a6b3" title="Teal"></button>
+                                <button type="button" class="swatch" style="background:#4a69bd" data-color="#4a69bd" title="Azul"></button>
+                                <button type="button" class="swatch" style="background:#6c5ce7" data-color="#6c5ce7" title="Indigo"></button>
+                                <button type="button" class="swatch" style="background:#9b59b6" data-color="#9b59b6" title="Purpura"></button>
+                                <button type="button" class="swatch" style="background:#e84393" data-color="#e84393" title="Magenta"></button>
+                                <button type="button" class="swatch" style="background:#f06292" data-color="#f06292" title="Coral"></button>
+                                <button type="button" class="swatch" style="background:#e67e22" data-color="#e67e22" title="Naranja"></button>
+                                <button type="button" class="swatch" style="background:#f7d731" data-color="#f7d731" title="Amarillo"></button>
+                                <button type="button" class="swatch" style="background:#2ecc71" data-color="#2ecc71" title="Esmeralda"></button>
+                                <button type="button" class="swatch" style="background:#55efc4" data-color="#55efc4" title="Turquesa"></button>
+                                <button type="button" class="swatch" style="background:#74b9ff" data-color="#74b9ff" title="Celeste"></button>
+                                <button type="button" class="swatch" style="background:#a29bfe" data-color="#a29bfe" title="Lavanda"></button>
+                                <button type="button" class="swatch" style="background:#fd79a8" data-color="#fd79a8" title="Chicle"></button>
+                                <button type="button" class="swatch" style="background:#fab1a0" data-color="#fab1a0" title="Salmon"></button>
+                                <button type="button" class="swatch" style="background:#ffc0cb" data-color="#ffc0cb" title="Rosa pastel"></button>
+                                <button type="button" class="swatch" style="background:#b8e994" data-color="#b8e994" title="Menta"></button>
+                                <button type="button" class="swatch swatch--custom" data-action="pick" title="Color personalizado">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 4v8M4 8h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                                </button>
+                            </div>
                         </div>
                         <div>
-                            <label class="input-label" for="counter-theme">Tema</label>
-                            <select id="counter-theme" class="input-control">
-                                <option value="light" selected>Light</option>
-                                <option value="dark">Dark</option>
-                            </select>
+                            <label class="input-label" for="counter-radius">Border radius <span id="counter-radius-value">24px</span></label>
+                            <input id="counter-radius" class="input-control" type="range" min="0" max="32" value="24">
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
 
             <div class="section-stack">
@@ -119,7 +203,7 @@
                 <h2>Solo tienes que hacer esto</h2>
                 <ol class="simple-steps">
                     <li>Elige el estilo que mas te guste.</li>
-                    <li>Ajusta el texto, los digitos y el valor inicial.</li>
+                        <li>Pega la URL, ajusta los digitos y el valor inicial.</li>
                     <li>Copia el codigo y pegalo en tu web o blog.</li>
                 </ol>
             </div>
@@ -140,12 +224,13 @@
                 <a href="/">Inicio</a>
                 <a href="/widget-baratos.htm">Widget</a>
             </span>
-            <span class="muted-inline">contador-de-visitas.com</span>
+            <span class="muted-inline">© <span id="footer-year">2026</span> contador-de-visitas.com</span>
         </small>
     </footer>
+    <script>var y=document.getElementById('footer-year');if(y)y.textContent=new Date().getFullYear();</script>
 </div>
 
-<script src="/js/site-nav.js?v=20260321c"></script>
+<script src="/js/site-nav.js?v=20260321d"></script>
 <script type="module" src="/js/revive-counter-generator.js"></script>
 </body>
 </html>
