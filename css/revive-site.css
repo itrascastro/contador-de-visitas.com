@@ -510,6 +510,9 @@ img {
 .page-panel,
 .utility-card,
 .widget-card {
+    display: grid;
+    align-content: start;
+    gap: 18px;
     padding: 24px;
 }
 
@@ -530,6 +533,28 @@ img {
 .section-copy {
     margin: 8px 0 0;
     font-size: 15px;
+}
+
+.page-section > .section-title {
+    margin-bottom: 20px;
+}
+
+.page-panel .action-row,
+.utility-card .action-row,
+.widget-card .action-row,
+.page-panel .hero-links,
+.utility-card .hero-links,
+.widget-card .hero-links,
+.page-panel .footer-links,
+.utility-card .footer-links,
+.widget-card .footer-links,
+.page-panel .section-copy,
+.utility-card .section-copy,
+.widget-card .section-copy,
+.page-panel .field-note,
+.utility-card .field-note,
+.widget-card .field-note {
+    margin-top: 0;
 }
 
 /* ── Color & Range Inputs ──────────────────────────────── */
@@ -726,6 +751,16 @@ input[type="range"].input-control:focus {
     transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
+input[type="number"].input-control {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+input[type="number"].input-control::-webkit-outer-spin-button,
+input[type="number"].input-control::-webkit-inner-spin-button {
+    margin: 0;
+}
+
 .input-control:focus,
 .snippet-box:focus,
 .code-box:focus {
@@ -776,6 +811,7 @@ input[type="range"].input-control:focus {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
     gap: 12px;
+    margin-top: 20px;
 }
 
 .style-card {
