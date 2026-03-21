@@ -307,6 +307,7 @@ img {
 .home-sidebar {
     display: grid;
     gap: 12px;
+    padding-top: 48px;
 }
 
 .home-sidebar .widget-card {
@@ -912,6 +913,10 @@ input[type="range"].input-control:focus {
     .split-grid,
     .generator-layout {
         grid-template-columns: 1fr;
+    }
+
+    .home-sidebar {
+        padding-top: 0;
     }
 }
 
