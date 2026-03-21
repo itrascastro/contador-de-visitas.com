@@ -94,6 +94,9 @@ img {
 .brand-link {
     display: inline-flex;
     align-items: center;
+    min-width: 0;
+    max-width: calc(100% - 56px);
+    flex: 1 1 auto;
     text-decoration: none;
 }
 
@@ -101,6 +104,7 @@ img {
     display: inline-flex;
     align-items: center;
     gap: 10px;
+    min-width: 0;
 }
 
 .brand-icon {
@@ -117,6 +121,8 @@ img {
     letter-spacing: -0.025em;
     line-height: 1;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* ── Navigation ────────────────────────────────────────── */
@@ -126,6 +132,7 @@ img {
     gap: 8px;
     margin-left: auto;
     position: relative;
+    flex-shrink: 0;
 }
 
 .site-nav {
@@ -514,6 +521,10 @@ img {
     align-content: start;
     gap: 18px;
     padding: 24px;
+}
+
+#counter-configurator {
+    scroll-margin-top: 96px;
 }
 
 .panel-heading-modern,
@@ -999,7 +1010,7 @@ input[type="number"].input-control::-webkit-inner-spin-button {
 
     .topbar-inner {
         max-width: calc(100% - 24px);
-        gap: 12px;
+        gap: 10px;
     }
 
     .brand-lockup {
@@ -1012,7 +1023,7 @@ input[type="number"].input-control::-webkit-inner-spin-button {
     }
 
     .brand-name {
-        font-size: 22px;
+        font-size: clamp(15px, 4.9vw, 20px);
     }
 
     .hero-card {
