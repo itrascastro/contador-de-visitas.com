@@ -3,6 +3,7 @@ import { COUNTER_STYLES, normalizeCounterOptions, renderCounterSvg } from './js/
 
 const COUNTER_IMAGE_ROUTE = /^\/c\/([a-z0-9][a-z0-9._-]{0,63})\.svg$/i;
 const COUNTER_JSON_ROUTE = /^\/api\/counters\/([a-z0-9][a-z0-9._-]{0,63})$/i;
+const DAILY_LIMIT_PER_COUNTER = 200;
 
 function parseStartValue(url) {
   const value = url.searchParams.get('start') || url.searchParams.get('initial') || '0';
@@ -13,6 +14,10 @@ function parseStartValue(url) {
   }
 
   return Math.min(parsed, 999999999999);
+}
+
+function utcDayKey(timestamp) {
+  return new Date(timestamp).toISOString().slice(0, 10);
 }
 
 function jsonResponse(data, status = 200) {
@@ -37,14 +42,24 @@ function svgResponse(svg, cacheHeader) {
   });
 }
 
-async function getCounterCount(env, slug, startValue, increment) {
+function emptyBlockedResponse() {
+  return new Response('', {
+    status: 204,
+    headers: {
+      'cache-control': 'public, max-age=86400, s-maxage=86400, immutable',
+      'x-robots-tag': 'noindex, nofollow, noimageindex'
+    }
+  });
+}
+
+async function getCounterCount(env, slug, startValue, action) {
   const objectId = env.COUNTERS.idFromName(slug);
   const stub = env.COUNTERS.get(objectId);
-  const actionUrl = new URL(`https://counter.internal/${increment ? 'increment' : 'value'}`);
+  const actionUrl = new URL(`https://counter.internal/${action}`);
   actionUrl.searchParams.set('start', String(startValue));
   const response = await stub.fetch(actionUrl.toString());
 
-  if (!response.ok) {
+  if (!response.ok && response.status !== 423) {
     throw new Error(`Counter Durable Object returned ${response.status}`);
   }
 
@@ -64,6 +79,7 @@ export default {
         status: 'ok',
         service: 'contador-de-visitas',
         storage: 'durable-objects',
+        dailyLimitPerCounter: DAILY_LIMIT_PER_COUNTER,
         styles: COUNTER_STYLES.map((style) => style.id)
       });
     }
@@ -98,7 +114,12 @@ export default {
         theme: url.searchParams.get('theme'),
         digits: url.searchParams.get('digits')
       });
-      const data = await getCounterCount(env, slug, startValue, true);
+      const action = request.method === 'HEAD' ? 'value' : 'increment';
+      const data = await getCounterCount(env, slug, startValue, action);
+
+      if (data.blocked) {
+        return emptyBlockedResponse();
+      }
 
       return svgResponse(
         renderCounterSvg({
@@ -117,13 +138,18 @@ export default {
     const jsonMatch = url.pathname.match(COUNTER_JSON_ROUTE);
     if (jsonMatch) {
       const slug = jsonMatch[1].toLowerCase();
-      const data = await getCounterCount(env, slug, 0, false);
+      const data = await getCounterCount(env, slug, 0, 'value');
 
       return jsonResponse({
         id: slug,
         count: data.count,
+        blocked: !!data.blocked,
         createdAt: data.createdAt ? new Date(data.createdAt).toISOString() : null,
-        updatedAt: data.updatedAt ? new Date(data.updatedAt).toISOString() : null
+        updatedAt: data.updatedAt ? new Date(data.updatedAt).toISOString() : null,
+        blockedAt: data.blockedAt ? new Date(data.blockedAt).toISOString() : null,
+        dailyCount: data.dailyCount || 0,
+        dailyWindow: data.dailyWindow || null,
+        dailyLimit: DAILY_LIMIT_PER_COUNTER
       });
     }
 
@@ -147,9 +173,25 @@ export class CounterDurableObject extends DurableObject {
     this.loaded = false;
   }
 
+  normalizeRecord(record) {
+    if (!record) {
+      return null;
+    }
+
+    return {
+      count: Number.isFinite(record.count) ? record.count : 0,
+      createdAt: record.createdAt || null,
+      updatedAt: record.updatedAt || null,
+      blocked: !!record.blocked,
+      blockedAt: record.blockedAt || null,
+      dailyWindow: record.dailyWindow || null,
+      dailyCount: Number.isFinite(record.dailyCount) ? record.dailyCount : 0
+    };
+  }
+
   async loadRecord() {
     if (!this.loaded) {
-      this.record = await this.ctx.storage.get('record');
+      this.record = this.normalizeRecord(await this.ctx.storage.get('record'));
       this.loaded = true;
     }
 
@@ -166,6 +208,7 @@ export class CounterDurableObject extends DurableObject {
     const url = new URL(request.url);
     const start = parseStartValue(url);
     const now = Date.now();
+    const today = utcDayKey(now);
     let record = await this.loadRecord();
 
     if (url.pathname === '/increment') {
@@ -173,11 +216,33 @@ export class CounterDurableObject extends DurableObject {
         record = {
           count: start,
           createdAt: now,
-          updatedAt: now
+          updatedAt: now,
+          blocked: false,
+          blockedAt: null,
+          dailyWindow: today,
+          dailyCount: 0
         };
       }
 
+      if (record.dailyWindow !== today) {
+        record.dailyWindow = today;
+        record.dailyCount = 0;
+      }
+
+      if (record.blocked) {
+        return jsonResponse(record, 423);
+      }
+
+      if (record.dailyCount >= DAILY_LIMIT_PER_COUNTER) {
+        record.blocked = true;
+        record.blockedAt = now;
+        record.updatedAt = now;
+        await this.saveRecord(record);
+        return jsonResponse(record, 423);
+      }
+
       record.count += 1;
+      record.dailyCount += 1;
       record.updatedAt = now;
       await this.saveRecord(record);
 
@@ -189,8 +254,18 @@ export class CounterDurableObject extends DurableObject {
         return jsonResponse({
           count: 0,
           createdAt: null,
-          updatedAt: null
+          updatedAt: null,
+          blocked: false,
+          blockedAt: null,
+          dailyWindow: null,
+          dailyCount: 0
         });
+      }
+
+      if (!record.blocked && record.dailyWindow !== today) {
+        record.dailyWindow = today;
+        record.dailyCount = 0;
+        await this.saveRecord(record);
       }
 
       return jsonResponse(record);
