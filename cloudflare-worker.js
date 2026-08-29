@@ -3,7 +3,12 @@ import { COUNTER_STYLES, normalizeCounterOptions, renderCounterSvg } from './js/
 
 const COUNTER_IMAGE_ROUTE = /^\/c\/([a-z0-9][a-z0-9._-]{0,63})\.svg$/i;
 const COUNTER_JSON_ROUTE = /^\/api\/counters\/([a-z0-9][a-z0-9._-]{0,63})$/i;
-const DAILY_LIMIT_PER_COUNTER = 200;
+const SAFE_DAILY_REQUEST_BUDGET = 50000;
+const MAX_COUNTER_SHARE = 0.02;
+
+function getDailyLimitPerCounter() {
+  return Math.max(1, Math.floor(SAFE_DAILY_REQUEST_BUDGET * MAX_COUNTER_SHARE));
+}
 
 function parseStartValue(url) {
   const value = url.searchParams.get('start') || url.searchParams.get('initial') || '0';
@@ -79,7 +84,9 @@ export default {
         status: 'ok',
         service: 'contador-de-visitas',
         storage: 'durable-objects',
-        dailyLimitPerCounter: DAILY_LIMIT_PER_COUNTER,
+        safeDailyRequestBudget: SAFE_DAILY_REQUEST_BUDGET,
+        maxCounterShare: MAX_COUNTER_SHARE,
+        dailyLimitPerCounter: getDailyLimitPerCounter(),
         styles: COUNTER_STYLES.map((style) => style.id)
       });
     }
@@ -149,7 +156,7 @@ export default {
         blockedAt: data.blockedAt ? new Date(data.blockedAt).toISOString() : null,
         dailyCount: data.dailyCount || 0,
         dailyWindow: data.dailyWindow || null,
-        dailyLimit: DAILY_LIMIT_PER_COUNTER
+        dailyLimit: getDailyLimitPerCounter()
       });
     }
 
@@ -233,7 +240,7 @@ export class CounterDurableObject extends DurableObject {
         return jsonResponse(record, 423);
       }
 
-      if (record.dailyCount >= DAILY_LIMIT_PER_COUNTER) {
+      if (record.dailyCount >= getDailyLimitPerCounter()) {
         record.blocked = true;
         record.blockedAt = now;
         record.updatedAt = now;
